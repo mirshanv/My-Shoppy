@@ -7,16 +7,16 @@ function ProductComponent() {
     const RenderList = products.map((product) => {
         const { id, title, image, price, Category } = product;
         return (
-            <div className="four column wide">
-                <Link to={`/product/${id}`}>
+            <div className="four column wide" style={{ color: 'blue', height: 370 }}>
+                {/* <Link to={`/product/${id}`}> */}
+                < a href={`/product/${id}`}>
                     <div className='ui link cards' key={id}>
                         <div className='card' >
                             <div className='image'>
-
-                                <img src={image} alt={title} />
+                                <img src={image} alt={title} style={{ height: 250 }} />
                             </div>
                             <div className='content'>
-                                <div className='header'>
+                                <div className='header' style={{ fontSize: 15, wordBreak: "break-word", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                                     {title}
                                 </div>
                                 <div className='meta price'>
@@ -29,7 +29,8 @@ function ProductComponent() {
 
                         </div >
                     </div >
-                </Link>
+                </a >
+                {/* </Link> */}
             </div >
         )
     })
